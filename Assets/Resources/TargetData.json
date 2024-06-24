@@ -1,0 +1,1031 @@
+{
+	"TargetList": [
+		{
+			"Name": "StartPoint1",
+			"Position": {
+				"x": 0.00,
+				"y": 0.00,
+				"z": 0.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 180.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "StartPoint2",
+			"Position": {
+				"x": 19.32,
+				"y": 0.00,
+				"z": 3.54
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 180.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Air fresheners",
+			"Position": {
+				"x": 60.47,
+				"y": 0.00,
+				"z": 34.86
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Appliance",
+			"Position": {
+				"x": 9.33,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Baby needs",
+			"Position": {
+				"x": 57.9,
+				"y": 0.00,
+				"z": 53.27
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Bath & Lotion",
+			"Position": {
+				"x": 58.56,
+				"y": 0.00,
+				"z": 53.27
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Bath & Towel",
+			"Position": {
+				"x": 60.37,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Bedding",
+			"Position": {
+				"x": 51.96,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Biscuit & Cookies",
+			"Position": {
+				"x": 24.49,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Body care",
+			"Position": {
+				"x": 64.11,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Bread",
+			"Position": {
+				"x": 3.55,
+				"y": 0.00,
+				"z": 17.11
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Butter & Creams",
+			"Position": {
+				"x": 33.88,
+				"y": 0.00,
+				"z": 35.85
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Car care & Accessories",
+			"Position": {
+				"x": 39.83,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Carbonated & Packed drink",
+			"Position": {
+				"x": 9.46,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Cereal & Breakfast",
+			"Position": {
+				"x": 18.4,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Cheese",
+			"Position": {
+				"x": 9.08,
+				"y": 0.00,
+				"z": 52.08
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Chips & Crisps",
+			"Position": {
+				"x": 30.47,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Chocolate & Candy",
+			"Position": {
+				"x": 27.81,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Chocolate & Nutritious drink",
+			"Position": {
+				"x": 15.19,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Cleaning & Tools",
+			"Position": {
+				"x": 57.79,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Coffee",
+			"Position": {
+				"x": 21.74,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Cooking & Baking ingredients",
+			"Position": {
+				"x": 33.88,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Cooking oil",
+			"Position": {
+				"x": 36.5,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Cosmetic",
+			"Position": {
+				"x": 64.11,
+				"y": 0.00,
+				"z": 26.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Cutlery",
+			"Position": {
+				"x": 42.22,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Deodorants",
+			"Position": {
+				"x": 66.53,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Desserts & Ice cream",
+			"Position": {
+				"x": 5.68,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Diapers & Wipes",
+			"Position": {
+				"x": 59.1,
+				"y": 0.00,
+				"z": 53.27
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Dinnerware",
+			"Position": {
+				"x": 42.96,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Dish washing",
+			"Position": {
+				"x": 61.01,
+				"y": 0.00,
+				"z": 46.42
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Drinkware",
+			"Position": {
+				"x": 45.33,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Dry & Canned food",
+			"Position": {
+				"x": 45.93,
+				"y": 0.00,
+				"z": 37.93
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Eggs",
+			"Position": {
+				"x": 3.55,
+				"y": 0.00,
+				"z": 26.56
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Fish & Seafood",
+			"Position": {
+				"x": -2.44,
+				"y": 0.00,
+				"z": 25.44
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Food",
+			"Position": {
+				"x": 59.76,
+				"y": 0.00,
+				"z": 53.27
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Food storage",
+			"Position": {
+				"x": 45.91,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Frozen food",
+			"Position": {
+				"x": -2.07,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Fruits",
+			"Position": {
+				"x": -0.73,
+				"y": 0.00,
+				"z": 6.68
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Gardening",
+			"Position": {
+				"x": 39.16,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Hair care",
+			"Position": {
+				"x": 61.00,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Hand care",
+			"Position": {
+				"x": 63.43,
+				"y": 0.00,
+				"z": 26.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Hardware",
+			"Position": {
+				"x": 36.50,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Health & Safety",
+			"Position": {
+				"x": 60.3,
+				"y": 0.00,
+				"z": 53.27
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Health & Wellness",
+			"Position": {
+				"x": 64.11,
+				"y": 0.00,
+				"z": 16.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Home interior",
+			"Position": {
+				"x": 15.44,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Juices",
+			"Position": {
+				"x": 2.16,
+				"y": 0.00,
+				"z": 52.08
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Juices & Cordial",
+			"Position": {
+				"x": 12.67,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Kitchen organiser",
+			"Position": {
+				"x": 51.38,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Kitchen utensil",
+			"Position": {
+				"x": 48.33,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Laundry",
+			"Position": {
+				"x": 54.7,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Meat & Poultry",
+			"Position": {
+				"x": -2.44,
+				"y": 0.00,
+				"z": 18.41
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Milk",
+			"Position": {
+				"x": -7.54,
+				"y": 0.00,
+				"z": 47.84
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Milk & Creamers",
+			"Position": {
+				"x": 15.63,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Milk powder",
+			"Position": {
+				"x": 61.02,
+				"y": 0.00,
+				"z": 53.27
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Non halal",
+			"Position": {
+				"x": 67.05,
+				"y": 0.00,
+				"z": 46.93
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Noodles",
+			"Position": {
+				"x": -7.54,
+				"y": 0.00,
+				"z": 41.68
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Noodles & Pasta",
+			"Position": {
+				"x": 42.64,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Nuts & Seeds",
+			"Position": {
+				"x": 27.21,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Oral care",
+			"Position": {
+				"x": 63.43,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Pest control",
+			"Position": {
+				"x": 51.72,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Pet food",
+			"Position": {
+				"x": 48.78,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Pot & Pan",
+			"Position": {
+				"x": 49.01,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Preserve foods",
+			"Position": {
+				"x": 45.93,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Rice and grains",
+			"Position": {
+				"x": 35.76,
+				"y": 0.00,
+				"z": 30.67
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Sanitary",
+			"Position": {
+				"x": 63.82,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Sauce & Paste",
+			"Position": {
+				"x": 39.48,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Shaving & Grooming",
+			"Position": {
+				"x": 66.53,
+				"y": 0.00,
+				"z": 16.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Skin care",
+			"Position": {
+				"x": 66.53,
+				"y": 0.00,
+				"z": 26.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Spices & Dry condiments",
+			"Position": {
+				"x": -8.35,
+				"y": 0.00,
+				"z": 29.55
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Sports & Outdoor",
+			"Position": {
+				"x": 30.56,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Stationery",
+			"Position": {
+				"x": 33.55,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Sugars & Sweeteners",
+			"Position": {
+				"x": 33.88,
+				"y": 0.00,
+				"z": 46.96
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Tea",
+			"Position": {
+				"x": 21.17,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Tissue",
+			"Position": {
+				"x": 66.87,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Tofu",
+			"Position": {
+				"x": -7.54,
+				"y": 0.00,
+				"z": 51.78
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Toys",
+			"Position": {
+				"x": 21.39,
+				"y": 0.00,
+				"z": 21.00
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Vegetable",
+			"Position": {
+				"x": -7.85,
+				"y": 0.00,
+				"z": 11.18
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Water",
+			"Position": {
+				"x": 12.17,
+				"y": 0.00,
+				"z": 42.38
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		},
+		{
+			"Name": "Yogurt & Pudding",
+			"Position": {
+				"x": -2.99,
+				"y": 0.00,
+				"z": 52.08
+			},
+			"Rotation": {
+				"x": 0.0,
+				"y": 0.0,
+				"z": 0.0
+			}
+		}
+	]
+}
