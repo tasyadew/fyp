@@ -6,7 +6,6 @@ using UnityEngine.UI;
 using System.Net.Http;
 using TMPro;
 using System.Text;
-using System.Text.Json;
 using UnityEngine.SceneManagement;
 
 public class APIManager : MonoBehaviour

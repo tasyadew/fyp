@@ -8,22 +8,15 @@ using UnityEngine.XR.ARSubsystems;
 
 public class TargetHandler : MonoBehaviour
 {
-    [SerializeField]
-    private QrCodeRecenter qrCodeRecenter;
+    [SerializeField] private QrCodeRecenter qrCodeRecenter;
+    [SerializeField] private NavigationController navigationController;
+    [SerializeField] private TextAsset targetModelData;
+    // [SerializeField] private TMP_Dropdown targetDataDropdown;
 
-    [SerializeField]
-    private NavigationController navigationController;
-    [SerializeField]
-    private TextAsset targetModelData;
-    [SerializeField]
-    private TMP_Dropdown targetDataDropdown;
+    [SerializeField] private GameObject targetObjectPrefab;
+    [SerializeField] private Transform[] targetObjectsParentTransforms;
 
-    [SerializeField]
-    private GameObject targetObjectPrefab;
-    [SerializeField]
-    private Transform[] targetObjectsParentTransforms;
-
-    private List<TargetFacade> currentTargetItems = new List<TargetFacade>();
+    public static List<TargetFacade> currentTargetItems = new List<TargetFacade>();
     private int currPosIndex = 0;
     private int currClosestIndex = 0;
 
@@ -60,7 +53,7 @@ public class TargetHandler : MonoBehaviour
         }
 
         GenerateTargetItems();
-        FillDropdownWithTargetItems();
+        // FillDropdownWithTargetItems();
         currClosestIndex = FindClosestTargetIndex();
 
         if (currClosestIndex == -1)
@@ -70,7 +63,7 @@ public class TargetHandler : MonoBehaviour
         else
         {
             string listOfProducts = allTargets.Find(x => x.category.Equals(currentTargetItems[currClosestIndex].Name)).products.Aggregate((i, j) => i + ", " + j); ;
-            myText = "Destination: " + currentTargetItems[currClosestIndex].Name + "\nList of products: " + listOfProducts;
+            myText = "Destination:\n" + currentTargetItems[currClosestIndex].Name + "\n\nList of products:\n" + listOfProducts;
 
             SetSelectedTargetPositionWithDropdown(currClosestIndex);
             qrCodeRecenter.SetQrCodeRecenterTarget(currentTargetItems[currPosIndex].Name);
@@ -94,7 +87,7 @@ public class TargetHandler : MonoBehaviour
         else
         {
             string listOfProducts = allTargets.Find(x => x.category.Equals(currentTargetItems[currClosestIndex].Name)).products.Aggregate((i, j) => i + ", " + j); ;
-            myText = "Destination: " + currentTargetItems[currClosestIndex].Name + "\nList of products: " + listOfProducts;
+            myText = "Destination:\n" + currentTargetItems[currClosestIndex].Name + "\n\nList of products:\n" + listOfProducts;
             SetSelectedTargetPositionWithDropdown(currClosestIndex);
             qrCodeRecenter.SetQrCodeRecenterTarget(currentTargetItems[currPosIndex].Name);
         }
@@ -128,12 +121,17 @@ public class TargetHandler : MonoBehaviour
         return closestIndex;
     }
 
+    public void onSwapStartPointButtonClicked(string targetName)
+    {
+        currentTargetItems[0] = CreateTargetFacade(GenerateTargetDataFromSource().FirstOrDefault(x => x.Name == targetName));
+    }
+
     private void GenerateTargetItems()
     {
         IEnumerable<Target> targets = GenerateTargetDataFromSource();
         foreach (Target target in targets)
         {
-            if (target.Name == "StartPoint1") // TODO: Add logic so it chooses either StartPoint1 || target.Name == "StartPoint2")
+            if (target.Name == "StartPoint1")
             {
                 currentTargetItems.Add(CreateTargetFacade(target));
                 continue;
@@ -151,12 +149,12 @@ public class TargetHandler : MonoBehaviour
         }
     }
 
-    private IEnumerable<Target> GenerateTargetDataFromSource()
+    public IEnumerable<Target> GenerateTargetDataFromSource()
     {
         return JsonUtility.FromJson<TargetWrapper>(targetModelData.text).TargetList;
     }
 
-    private TargetFacade CreateTargetFacade(Target target)
+    public TargetFacade CreateTargetFacade(Target target)
     {
         GameObject targetObject = Instantiate(targetObjectPrefab, targetObjectsParentTransforms[0], false);
         targetObject.SetActive(true);
@@ -170,17 +168,17 @@ public class TargetHandler : MonoBehaviour
         return targetData;
     }
 
-    private void FillDropdownWithTargetItems()
-    {
-        List<TMP_Dropdown.OptionData> targetFacadeOptionData =
-            currentTargetItems.Select(x => new TMP_Dropdown.OptionData
-            {
-                text = $"{x.Name}"
-            }).ToList();
+    // private void FillDropdownWithTargetItems()
+    // {
+    //     List<TMP_Dropdown.OptionData> targetFacadeOptionData =
+    //         currentTargetItems.Select(x => new TMP_Dropdown.OptionData
+    //         {
+    //             text = $"{x.Name}"
+    //         }).ToList();
 
-        targetDataDropdown.ClearOptions();
-        targetDataDropdown.AddOptions(targetFacadeOptionData);
-    }
+    //     targetDataDropdown.ClearOptions();
+    //     targetDataDropdown.AddOptions(targetFacadeOptionData);
+    // }
 
     public void SetSelectedTargetPositionWithDropdown(int selectedValue)
     {

@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using ZXing;
+using System.Collections.Generic;
+using System.Linq;
 
 public class QrCodeRecenter : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class QrCodeRecenter : MonoBehaviour
     private ARCameraManager cameraManager;
     [SerializeField]
     private TargetHandler targetHandler;
+
     [SerializeField]
     private GameObject qrCodeScanningPanel;
 
@@ -96,7 +99,9 @@ public class QrCodeRecenter : MonoBehaviour
         // Do something with the result
         if (result != null)
         {
+            targetHandler.onSwapStartPointButtonClicked(result.Text);
             SetQrCodeRecenterTarget(result.Text);
+            // targetHandler.onSwapStartPointButtonClicked(result.Text);
             ToggleScanning();
         }
     }
@@ -108,6 +113,7 @@ public class QrCodeRecenter : MonoBehaviour
         if (currentTarget != null)
         {
             Debug.Log("Target found: " + currentTarget.Name);
+            Debug.Log("currItemsCount:" + TargetHandler.currentTargetItems.Count);
 
             // Reset position and rotation of ARSession
             session.Reset();
