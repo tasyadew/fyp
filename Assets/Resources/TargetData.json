@@ -3,7 +3,7 @@
 		{
 			"Name": "StartPoint1",
 			"Position": {
-				"x": 0.00,
+				"x": 1.25,
 				"y": 0.00,
 				"z": 0.00
 			},
@@ -16,9 +16,9 @@
 		{
 			"Name": "StartPoint2",
 			"Position": {
-				"x": 19.32,
+				"x": 12.39,
 				"y": 0.00,
-				"z": 3.54
+				"z": 3.75
 			},
 			"Rotation": {
 				"x": 0.0,

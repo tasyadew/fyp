@@ -12,6 +12,8 @@ public class PathLineVisualisation : MonoBehaviour
     [SerializeField]
     private Slider navigationYOffset;
 
+    private float offsetValue = -1;
+
     private NavMeshPath path;
     private Vector3[] calculatedPathAndOffset;
 
@@ -19,7 +21,7 @@ public class PathLineVisualisation : MonoBehaviour
     {
         path = navigationController.CalculatedPath;
         AddOffsetToPath();
-        // AddLineOffset();
+        AddLineOffset();
         SetLineRendererPositions();
     }
 
@@ -34,13 +36,14 @@ public class PathLineVisualisation : MonoBehaviour
 
     private void AddLineOffset()
     {
-        if (navigationYOffset.value != 0)
+
+        // if (navigationYOffset.value != 0)
+        // {
+        for (int i = 0; i < calculatedPathAndOffset.Length; i++)
         {
-            for (int i = 0; i < calculatedPathAndOffset.Length; i++)
-            {
-                calculatedPathAndOffset[i] += new Vector3(0, navigationYOffset.value, 0);
-            }
+            calculatedPathAndOffset[i] += new Vector3(0, offsetValue, 0);
         }
+        // }
     }
 
     private void SetLineRendererPositions()

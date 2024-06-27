@@ -16,6 +16,10 @@ public class QrCodeRecenter : MonoBehaviour
     private XROrigin sessionOrigin;
     [SerializeField]
     private ARCameraManager cameraManager;
+
+    [SerializeField]
+    private Camera mainCamera;
+
     [SerializeField]
     private TargetHandler targetHandler;
 
@@ -100,13 +104,13 @@ public class QrCodeRecenter : MonoBehaviour
         if (result != null)
         {
             targetHandler.onSwapStartPointButtonClicked(result.Text);
-            SetQrCodeRecenterTarget(result.Text);
+            SetQrCodeRecenterTarget(result.Text, true);
             // targetHandler.onSwapStartPointButtonClicked(result.Text);
             ToggleScanning();
         }
     }
 
-    public void SetQrCodeRecenterTarget(string targetText)
+    public void SetQrCodeRecenterTarget(string targetText, bool isStartPoint)
     {
         Debug.Log("QR Code detected: " + targetText);
         TargetFacade currentTarget = targetHandler.GetCurrentTargetByTargetText(targetText);
@@ -120,13 +124,22 @@ public class QrCodeRecenter : MonoBehaviour
 
             // Add offset for recentering
             sessionOrigin.transform.position = currentTarget.transform.position;
-            sessionOrigin.transform.rotation = currentTarget.transform.rotation;
+            if (isStartPoint)
+            {
+                sessionOrigin.transform.rotation = currentTarget.transform.rotation;
+            }
+            else
+            {
+                sessionOrigin.transform.rotation = Quaternion.Euler(0, mainCamera.transform.rotation.eulerAngles.y, mainCamera.transform.rotation.eulerAngles.z);
+                
+
+            }
         }
     }
 
     public void ChangeActiveFloor(string floorEntrance)
     {
-        SetQrCodeRecenterTarget(floorEntrance);
+        SetQrCodeRecenterTarget(floorEntrance, true);
     }
 
     public void ToggleScanning()

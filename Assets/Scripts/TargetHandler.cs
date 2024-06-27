@@ -66,7 +66,7 @@ public class TargetHandler : MonoBehaviour
             myText = "Destination:\n" + currentTargetItems[currClosestIndex].Name + "\n\nList of products:\n" + listOfProducts;
 
             SetSelectedTargetPositionWithDropdown(currClosestIndex);
-            qrCodeRecenter.SetQrCodeRecenterTarget(currentTargetItems[currPosIndex].Name);
+            qrCodeRecenter.SetQrCodeRecenterTarget(currentTargetItems[currPosIndex].Name, false);
         }
     }
 
@@ -89,7 +89,7 @@ public class TargetHandler : MonoBehaviour
             string listOfProducts = allTargets.Find(x => x.category.Equals(currentTargetItems[currClosestIndex].Name)).products.Aggregate((i, j) => i + ", " + j); ;
             myText = "Destination:\n" + currentTargetItems[currClosestIndex].Name + "\n\nList of products:\n" + listOfProducts;
             SetSelectedTargetPositionWithDropdown(currClosestIndex);
-            qrCodeRecenter.SetQrCodeRecenterTarget(currentTargetItems[currPosIndex].Name);
+            qrCodeRecenter.SetQrCodeRecenterTarget(currentTargetItems[currPosIndex].Name, false);
         }
     }
 
