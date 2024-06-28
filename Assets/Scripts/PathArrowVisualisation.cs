@@ -14,6 +14,8 @@ public class PathArrowVisualisation : MonoBehaviour
     [SerializeField]
     private float moveOnDistance;
 
+    [SerializeField]
+    private TargetHandler targetHandler;
     private float offsetValue = -1;
 
     private NavMeshPath path;
@@ -21,15 +23,30 @@ public class PathArrowVisualisation : MonoBehaviour
     private Vector3[] pathOffset;
     private Vector3 nextNavigationPoint = Vector3.zero;
 
+    private void Start()
+    {
+        // Find object IndoorNavigation and get component targetHandler
+        targetHandler = GameObject.Find("IndoorNavigation").GetComponent<TargetHandler>();
+    }
+
     private void Update()
     {
         path = navigationController.CalculatedPath;
 
         AddOffsetToPath();
         SelectNextNavigationPoint();
-        AddArrowOffset();
+        //AddArrowOffset();
 
-        arrow.transform.LookAt(nextNavigationPoint);
+        // If the targetHandler has a target and the LineVis mode is arrow
+        if (targetHandler.currClosestIndex != -1 && SwitchPathVisualisation.visualisationCounter == 1)
+        {
+            arrow.SetActive(true);
+            arrow.transform.LookAt(nextNavigationPoint);
+        }
+        else
+        {
+            arrow.SetActive(false);
+        }
     }
 
     private void AddOffsetToPath()
@@ -43,7 +60,8 @@ public class PathArrowVisualisation : MonoBehaviour
 
     private void SelectNextNavigationPoint()
     {
-        nextNavigationPoint = SelectNextNavigationPointWithinDistance();
+        //nextNavigationPoint = SelectNextNavigationPointWithinDistance();
+        nextNavigationPoint = targetHandler.GetNextTargetPosition();
     }
 
     private Vector3 SelectNextNavigationPointWithinDistance()

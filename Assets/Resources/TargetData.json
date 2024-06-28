@@ -209,7 +209,7 @@
 			}
 		},
 		{
-			"Name": "Chips & Crisps",
+			"Name": "Cooking & Baking ingredients",
 			"Position": {
 				"x": 30.47,
 				"y": 0.00,
@@ -274,9 +274,9 @@
 			}
 		},
 		{
-			"Name": "Cooking & Baking ingredients",
+			"Name": "Chips & Crisps",
 			"Position": {
-				"x": 33.88,
+				"x": 33.36,
 				"y": 0.00,
 				"z": 42.38
 			},
@@ -731,7 +731,7 @@
 		{
 			"Name": "Noodles & Pasta",
 			"Position": {
-				"x": 42.64,
+				"x": 45.53,
 				"y": 0.00,
 				"z": 42.38
 			},
@@ -809,7 +809,7 @@
 		{
 			"Name": "Preserve foods",
 			"Position": {
-				"x": 45.93,
+				"x": 42.64,
 				"y": 0.00,
 				"z": 42.38
 			},

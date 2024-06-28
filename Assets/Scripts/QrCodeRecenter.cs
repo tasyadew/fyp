@@ -6,6 +6,8 @@ using UnityEngine.XR.ARSubsystems;
 using ZXing;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
+
 
 public class QrCodeRecenter : MonoBehaviour
 {
@@ -29,6 +31,21 @@ public class QrCodeRecenter : MonoBehaviour
     private Texture2D cameraImageTexture;
     private IBarcodeReader reader = new BarcodeReader(); // create a barcode reader instance
     private bool scanningEnabled = false;
+    public bool hasScanned = false;
+
+    [SerializeField]
+    private TMP_Text debugText;
+
+    [SerializeField]
+    private GameObject infoTextBox;
+    private TMP_Text infoText;
+
+    private void Start()
+    {
+        // Hide the tip for user after 5 seconds
+        infoText = infoTextBox.transform.GetChild(0).GetComponent<TMP_Text>();
+        Invoke("DisableInfoText", 5);
+    }
 
     private void OnEnable()
     {
@@ -105,34 +122,67 @@ public class QrCodeRecenter : MonoBehaviour
         {
             targetHandler.onSwapStartPointButtonClicked(result.Text);
             SetQrCodeRecenterTarget(result.Text, true);
-            // targetHandler.onSwapStartPointButtonClicked(result.Text);
             ToggleScanning();
+            debugText.text = System.DateTime.Now.ToString("HH:mm:ss") + " => " + result.Text;
+            result = null;
+
+            if (!hasScanned)
+            {
+                targetHandler.setActivePathfinding();
+                hasScanned = true;
+            }
         }
+    }
+
+    private void DisableInfoText()
+    {
+        infoTextBox.gameObject.SetActive(false);
+    }
+
+    void Update()
+    {
+        //debugText.text = System.DateTime.Now.ToString("HH:mm:ss") + " => " + mainCamera.transform.rotation;
+        debugText.text = System.DateTime.Now.ToString("HH:mm:ss") + " => " + sessionOrigin.CameraInOriginSpacePos + "\n" + sessionOrigin.OriginInCameraSpacePos;
     }
 
     public void SetQrCodeRecenterTarget(string targetText, bool isStartPoint)
     {
-        Debug.Log("QR Code detected: " + targetText);
         TargetFacade currentTarget = targetHandler.GetCurrentTargetByTargetText(targetText);
         if (currentTarget != null)
         {
-            Debug.Log("Target found: " + currentTarget.Name);
-            Debug.Log("currItemsCount:" + TargetHandler.currentTargetItems.Count);
-
-            // Reset position and rotation of ARSession
-            session.Reset();
-
-            // Add offset for recentering
-            sessionOrigin.transform.position = currentTarget.transform.position;
             if (isStartPoint)
             {
+                session.Reset();
+                sessionOrigin.transform.position = currentTarget.transform.position;
                 sessionOrigin.transform.rotation = currentTarget.transform.rotation;
+
+                // Cancel the previous invoke if there is any
+                CancelInvoke("DisableInfoText");
+
+                // Update the info text
+                infoTextBox.gameObject.SetActive(true);
+                if (targetText == "StartPoint1")
+                {
+                    infoText.text = "Starting in front of Wellness!";
+                }
+                else if (targetText == "StartPoint2")
+                {
+                    infoText.text = "Starting next to escalator!";
+                }
+                else
+                {
+                    infoText.text = "Starting at " + targetText + "!";
+                }
+
+                // Call function to hide the info text after waiting for 3 seconds
+                Invoke("DisableInfoText", 3);
             }
             else
             {
-                sessionOrigin.transform.rotation = Quaternion.Euler(0, mainCamera.transform.rotation.eulerAngles.y, mainCamera.transform.rotation.eulerAngles.z);
-                
-
+                //sessionOrigin.transform.position = currentTarget.transform.position;
+                sessionOrigin.MoveCameraToWorldLocation(currentTarget.transform.position);
+                // Move ARSession back to the origin without resetting
+                // session.GetComponent<Camera>().transform.position = currentTarget.transform.position;
             }
         }
     }
@@ -140,6 +190,11 @@ public class QrCodeRecenter : MonoBehaviour
     public void ChangeActiveFloor(string floorEntrance)
     {
         SetQrCodeRecenterTarget(floorEntrance, true);
+        if (!hasScanned)
+        {
+            targetHandler.setActivePathfinding();
+            hasScanned = true;
+        }
     }
 
     public void ToggleScanning()

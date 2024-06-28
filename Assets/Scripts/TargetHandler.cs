@@ -18,7 +18,10 @@ public class TargetHandler : MonoBehaviour
 
     public static List<TargetFacade> currentTargetItems = new List<TargetFacade>();
     private int currPosIndex = 0;
-    private int currClosestIndex = 0;
+    public int currClosestIndex = 0;
+
+    [SerializeField]
+    public TMP_Text debugText;
 
     [SerializeField] List<ProductObject> allProducts;
     [SerializeField] List<NavigationObject> allTargets;
@@ -64,16 +67,21 @@ public class TargetHandler : MonoBehaviour
         {
             string listOfProducts = allTargets.Find(x => x.category.Equals(currentTargetItems[currClosestIndex].Name)).products.Aggregate((i, j) => i + ", " + j); ;
             myText = "Destination:\n" + currentTargetItems[currClosestIndex].Name + "\n\nList of products:\n" + listOfProducts;
-
-            SetSelectedTargetPositionWithDropdown(currClosestIndex);
-            qrCodeRecenter.SetQrCodeRecenterTarget(currentTargetItems[currPosIndex].Name, false);
         }
+    }
+
+    public void setActivePathfinding()
+    {
+        SetSelectedTargetPositionWithDropdown(currClosestIndex);
+        qrCodeRecenter.SetQrCodeRecenterTarget(currentTargetItems[currPosIndex].Name, false);
     }
 
     // OnNextButtonClicked, change the current target to passed, make it the currPosIndex and find the next closest target
     public void OnNextButtonClicked()
     {
         if (currClosestIndex == -1) return;
+        if (!qrCodeRecenter.hasScanned) return;
+
         NavigationObject tempNavObj = allTargets[currClosestIndex - 1];
         tempNavObj.passed = true;
         allTargets[currClosestIndex - 1] = tempNavObj;
@@ -88,8 +96,8 @@ public class TargetHandler : MonoBehaviour
         {
             string listOfProducts = allTargets.Find(x => x.category.Equals(currentTargetItems[currClosestIndex].Name)).products.Aggregate((i, j) => i + ", " + j); ;
             myText = "Destination:\n" + currentTargetItems[currClosestIndex].Name + "\n\nList of products:\n" + listOfProducts;
-            SetSelectedTargetPositionWithDropdown(currClosestIndex);
-            qrCodeRecenter.SetQrCodeRecenterTarget(currentTargetItems[currPosIndex].Name, false);
+
+            setActivePathfinding();
         }
     }
 
@@ -124,6 +132,13 @@ public class TargetHandler : MonoBehaviour
     public void onSwapStartPointButtonClicked(string targetName)
     {
         currentTargetItems[0] = CreateTargetFacade(GenerateTargetDataFromSource().FirstOrDefault(x => x.Name == targetName));
+        debugText.text = System.DateTime.Now.ToString("HH:mm:ss") + " => " + targetName + "\n";
+        // add all the currentTargetItem name for debugging
+        int i = 0;
+        foreach (TargetFacade target in currentTargetItems)
+        {
+            debugText.text += "[" + (i++) + "]:" + target.Name + ", ";
+        }
     }
 
     private void GenerateTargetItems()
@@ -187,12 +202,17 @@ public class TargetHandler : MonoBehaviour
 
     private Vector3 GetCurrentlySelectedTarget(int selectedValue)
     {
-        if (selectedValue >= currentTargetItems.Count)
+        if (selectedValue < 0 || selectedValue >= currentTargetItems.Count)
         {
             return Vector3.zero;
         }
 
         return currentTargetItems[selectedValue].transform.position;
+    }
+
+    public Vector3 GetNextTargetPosition()
+    {
+        return GetCurrentlySelectedTarget(currClosestIndex);
     }
 
     public TargetFacade GetCurrentTargetByTargetText(string targetText)
